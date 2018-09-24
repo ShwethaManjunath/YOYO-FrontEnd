@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 
 import { connect } from 'react-redux';
 import { defaultFunction } from './actions';
@@ -13,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={classes.App}>
         React Redux Starter Template
       </div>
     );
