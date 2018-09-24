@@ -3,6 +3,11 @@ import classes from './App.css';
 
 import { connect } from 'react-redux';
 import { defaultFunction } from './actions';
+import {Switch, Route, Redirect} from 'react-router-dom';
+import Header from './shared-components/header/header';
+import Footer from './shared-components/footer/footer';
+import DashBoard from './components/dashboard/dashboard';
+import Categories from './components/categories/categories';
 
 class App extends Component {
 
@@ -14,7 +19,12 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-        React Redux Starter Template
+          <Header/>
+            <Switch>
+              <Route exact path='/' render={(props) => <DashBoard {...props}/>} />
+              <Route path='/categories' render={(props)=> <Categories {...props}/>}/>
+            </Switch>
+          <Footer/>
       </div>
     );
   }
