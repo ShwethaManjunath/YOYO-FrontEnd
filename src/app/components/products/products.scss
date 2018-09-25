@@ -1,13 +1,26 @@
 $bodyColor: black;
+
+.paper{
+    height: 140;
+    width: 100;
+}
+
+.divclass{
+    flex-grow: 1;
+}
+.btncolor{
+    background:#E5FCC2;
+    color: White;
+}
+
 .Body{
     color: $bodyColor;
     background-color: #ededed;
-    overflow: hidden;
 }
 
 .products {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     // overflow-x: scroll;
 }
