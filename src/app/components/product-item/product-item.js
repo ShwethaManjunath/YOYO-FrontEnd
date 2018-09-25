@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as classes from './product-item.scss';
+import ReactStars from 'react-stars';
 import { Grid, Col, Row } from 'react-flexbox-grid';
 import mockProduct from '../../../assets/mock-product.jpg';
 import { connect } from 'react-redux';
@@ -26,7 +27,7 @@ class ProductItem extends Component {
         // replace categories with payments route
         // once added
         this.props.history.push({
-            pathname: '/categories',
+            pathname: '/payment',
             item: item
         });
     }
@@ -54,10 +55,21 @@ class ProductItem extends Component {
     renderComments(item) {
         return (
             <div key={item.id}>
-                <p className={classes.userName}>{item.userName}</p>
+                <p className={classes.userName}>
+                    {item.userName}
+                    <span className={classes.userRating}>
+                        <span style={{ marginLeft: '10px' }}>
+                            <span style={(item.rating >= 1) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                            <span style={(item.rating >= 2) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                            <span style={(item.rating >= 3) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                            <span style={(item.rating >= 4) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                            <span style={(item.rating == 5) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                        </span>
+                    </span>
+                </p>
                 <p className={classes.userComment}>{item.userComment}</p>
                 <hr />
-            </div>
+            </div >
         );
     }
 
@@ -95,7 +107,16 @@ class ProductItem extends Component {
                             <p className={classes.priceTag}>Current Price: <span className={classes.primaryvalue}>{product.points} PTS</span></p>
                             <p className={classes.priceTag}>Original Price: <span className={classes.secondaryValue}>{discountPrice} PTS</span></p>
                             <p className={classes.priceSubTag}>Discount: {discountRate}%</p>
-                            <p className={classes.ratings}>Ratings: {product.ratings}</p>
+                            <p className={classes.ratings}>
+                                Ratings:
+                                <span style={{ marginLeft: '10px' }}>
+                                    <span style={(product.avgRating >= 1) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                                    <span style={(product.avgRating >= 2) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                                    <span style={(product.avgRating >= 3) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                                    <span style={(product.avgRating >= 4) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                                    <span style={(product.avgRating == 5) ? { color: 'orange' } : { color: 'black' }} className="fa fa-star"></span>
+                                </span>
+                            </p>
                             <button onClick={() => this.purchaseItem({
                                 itemId: 3,
                                 itemType: 'product'

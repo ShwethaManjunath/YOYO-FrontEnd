@@ -1,4 +1,5 @@
-import React , {Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -154,9 +155,11 @@ class Header extends Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="title" color="inherit" noWrap>
-              Yo-Yo
+            <Link to='/' style={{textDecoration: 'none', color: 'white'}}>
+              <Typography className={classes.title} variant="title" color="inherit" noWrap>
+                Yo-Yo
             </Typography>
+            </Link>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
