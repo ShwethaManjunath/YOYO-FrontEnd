@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Row, Col} from 'react-flexbox-grid';
 import * as classes from './payment.scss';
+import Button from '@material-ui/core/Button';
 class Payment extends Component{
     constructor(){
         super();
@@ -64,6 +65,8 @@ class Payment extends Component{
         }
 
         //Post Call transaction
+                
+
         console.log(obj);
         this.setState({})
     }
@@ -81,7 +84,9 @@ class Payment extends Component{
             <input id="receiver_phone" name="receiver_contact" className={classes.dc_number_input} onChange={this.handleInput} autocomplete="off"/>
             <label for="receiver_address" className={classes.dc_number_label }>Receiver Address</label>
             <input id="receiver_address" name="receiver_address" className={classes.dc_number_input} onChange={this.handleInput} autocomplete="off"/>
-            <input type="button" className={classes.submit_button_with_name} name="shipToThisAddress" value="Deliver to this address"  onClick={this.handleSubmit}  />
+            <Button variant="contained" className={classes.add_money_button} color="primary"  name="shipToThisAddress" onClick={this.handleSubmit}> 
+                Deliver to this address
+            </Button>
         </div>
         }
         else{
@@ -92,7 +97,10 @@ class Payment extends Component{
             <input id="receiver_email" name="receiver_email" className={classes.dc_number_input} onChange={this.handleInput} autocomplete="off"/>
             <label for="receiver_phone" className={classes.dc_number_label }>Receiver Phone</label>
             <input id="receiver_phone" name="receiver_contact" className={classes.dc_number_input} onChange={this.handleInput} autocomplete="off"/>
-            <input type="button" className={classes.submit_button_with_name} name="shipToThisAddress" value="Send through Email" onClick={this.handleSubmit}   />
+            {/* <input type="button" className={classes.submit_button_with_name} name="shipToThisAddress" value="Send through Email" onClick={this.handleSubmit}   /> */}
+            <Button variant="contained" className={classes.submit_button_with_name} color="primary"  name="shipToThisAddress" onClick={this.handleSubmit}> 
+                    Send through Email
+            </Button>
          </div>
         }
 
@@ -100,10 +108,10 @@ class Payment extends Component{
         return(
             <div>
                 <Row>
-                    <Col xsOffset={1} >
+                    <Col xsOffset={1} xs={11}>
                        <p className={classes.pointsAvailableTitle}> Available Points: {this.state.availablePoints} </p>
                     </Col>
-                    <Col xsOffset={1} >
+                    <Col xsOffset={1} xs={11}>
                     <p className={classes.pointsRequiredTitle}> Required Points: {this.state.requiredPoints}</p>
                     </Col>
                     <Col xsOffset={1} xs={11} sm={11} md={6} lg={6}>
@@ -111,12 +119,16 @@ class Payment extends Component{
                     parseInt(this.state.availablePoints)<=parseInt(this.state.requiredPoints ) ? 
                     <div>
                         
-                        <p> <input type="button" className={classes.add_money_button} name="addedAmount" value="Add money" onClick={this.handleAddMoney} /> </p>
-                       
+                        <p>
+                             <Button variant="contained" className={classes.add_money_button} color="primary"  name="addedAmount" onClick={this.handleAddMoney}> 
+                                Add money
+                            </Button>
+                            </p>
+
                         <p >You are short of <b>{parseInt(this.state.requiredPoints)-parseInt(this.state.availablePoints)} </b> points</p>
                     </div>
                     :
-                    <Col xsOffset={1} lgOffset={0} xs={12} sm={12} md={6} lg={11}>
+                    <Col xsOffset={1} lgOffset={0} xs={11} sm={11} md={6} lg={11}>
                     <div className={classes.directProductForm}>
                         {ProductForm}
                     </div>
@@ -137,7 +149,7 @@ class Payment extends Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col xsOffset={1} xs={12} sm={12} md={6} lg={6}>
+                    <Col xsOffset={1} xs={11} sm={12} md={6} lg={6}>
                         <Row>
                             <Col  xs={12} sm={8} md={6} lg={8}>
                                 <p className={classes.formGroup}>
@@ -170,20 +182,26 @@ class Payment extends Component{
                                 </p>
                             </Col>
                             <Col xs={12} sm={8} md={6} lg={8}>
-                            <input type="button" className={classes.cancel_button_with_name} name="shipToThisAddress" value="Cancel " onClick={this.handleCancel}  />
-                            <input type="button" className={classes.submit_button_with_name} name="shipToThisAddress" value="Apply"  onClick={this.handleApply}/>
+                            <Button variant="contained" className={classes.submit_button_with_name}  name="shipToThisAddress" onClick={this.handleCancel}> 
+                                Cancel
+                            </Button>
+
+                            <Button variant="contained" className={classes.submit_button_with_name} color="primary" name="shipToThisAddress" onClick={this.handleApply}> 
+                                Apply
+                            </Button>
+
                             </Col>
                             
                         </Row>
                     </Col>
                     {this.state.addressSectionFlag? 
-                    <Col xsOffset={1} lgOffset={0} xs={12} sm={12} md={6} lg={3}>
+                    <Col xsOffset={1} lgOffset={0} xs={11} sm={12} md={6} lg={3}>
                             {ProductForm}
                             
                         </Col> 
                         :
                         this.state.errorFlag ?
-                        <Col xsOffset={1} lgOffset={0} xs={12} sm={12} md={6} lg={3}>
+                        <Col xsOffset={1} lgOffset={0} xs={11} sm={12} md={6} lg={3}>
                             <p style={{color:"red",float:"left",fontSize:"20px"}}>You are short of <b>{parseInt(this.state.requiredPoints)-parseInt(this.state.availablePoints)} </b> points</p>
                             </Col>
                         :""}
