@@ -191,7 +191,7 @@ class Header extends Component {
                 onClick={this.handleProfileMenuOpen}
                 color="inherit"
               >
-                <AccountCircle />
+                <AccountCircle /><h5>Welcome User</h5>
               </IconButton>
             </div>
             <div className={classes.sectionMobile}>
