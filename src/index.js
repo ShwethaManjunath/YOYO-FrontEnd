@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 import reducers from './app/reducers';
 import ReduxPromise from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 const store = createStore(
     reducers,
@@ -20,7 +20,9 @@ const store = createStore(
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <App />
+            <Switch>
+                <Route path='/' component={App}/>
+            </Switch>
         </BrowserRouter>
     </Provider>
     , document.getElementById('root'));
