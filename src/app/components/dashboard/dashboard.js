@@ -63,7 +63,7 @@ class DashBoard extends Component {
                 <Row>
                     <Col lg={12}>
                         <div>
-                            <h5>Popular Products</h5>
+                            <h4>Popular Products</h4>
                         </div>
                     </Col>
                     <Col lg={12}>

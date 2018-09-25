@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-
+      <Header />
             <Switch>
               <Route exact path='/' render={(props) => <DashBoard {...props}/>} />
               <Route path='/categories' render={(props)=> <Categories {...props}/>}/>
@@ -28,7 +28,7 @@ class App extends Component {
               <Route path='/accountDetails' render={(props)=> <Account {...props}/>}/>
               <Redirect from='/**' to ='/'/>
             </Switch>
-
+      <Footer />
       </div>
     );
   }
