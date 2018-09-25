@@ -20,6 +20,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 const styles = theme => ({
   root: {
     width: '100%',
+    backgroundColor: '#9DE0AD'
   },
   grow: {
     flexGrow: 1,
@@ -137,27 +138,6 @@ class Header extends Component {
         open={isMobileMenuOpen}
         onClose={this.handleMobileMenuClose}
       >
-
-      {/* TODO when we will implement notificatio */}
-
-        {/* <MenuItem>
-          <IconButton color="inherit">
-            <Badge className={classes.margin} badgeContent={4} color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-          <IconButton color="inherit">
-            <Badge className={classes.margin} badgeContent={11} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <p>Notifications</p>
-        </MenuItem> */}
-
-
         <MenuItem onClick={this.handleProfileMenuOpen}>
           <IconButton color="inherit">
             <AccountCircle />
@@ -175,7 +155,7 @@ class Header extends Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="title" color="inherit" noWrap>
-              Material-UI
+              Yo-Yo
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>

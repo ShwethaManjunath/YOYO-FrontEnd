@@ -5,16 +5,16 @@ import './card.css';
 
 class Card extends Component {
     constructor(props) {
-        super();
+        super(props);
     }
     render() {
         return (
             <div>
                 <ProductCard
-                    photos={this.props.photos}
-                    price={this.props.price}
-                    productName={this.props.productName}
-                    description={this.props.description}
+                    photos = {[this.props.photos]}
+                    price= {this.props.price}
+                    productName= {this.props.productName}
+                    description= {this.props.description}
                     rating={this.props.rating}
                 />
             </div>

@@ -1,7 +1,12 @@
-$bodyColor:red;
+$bodyColor: black;
 .Body{
     color: $bodyColor;
-    // display: grid;
-    // grid-template-columns: repeat(12,1fr);
-    // grid-template-rows: auto;
+    background-color: #ededed;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    // overflow-x: scroll;
 }
