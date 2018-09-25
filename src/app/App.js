@@ -24,7 +24,6 @@ class App extends Component {
               <Route path='/payment' render={(props)=> <Payment {...props}/>}/>
               <Route path='/productslist' render={(props)=> <Products {...props}/>}/>
               <Route path='/userprofile' render={(props)=> <Userprofile {...props}/>}/>
-              <Route path='/accountDetails' render={(props)=> <Account {...props}/>}/>
               <Redirect from='/**' to ='/'/>
             </Switch>
       <Footer />

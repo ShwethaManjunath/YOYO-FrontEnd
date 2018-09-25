@@ -108,7 +108,7 @@ class Payment extends Component{
 
 
         return(
-            <div>
+            <div className={classes.main_div}>
                 <Row>
                     <Col xsOffset={1} xs={11}>
                        <p className={classes.pointsAvailableTitle}> Available Points: {this.state.availablePoints} </p>
