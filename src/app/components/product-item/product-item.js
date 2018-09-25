@@ -11,11 +11,13 @@ class ProductItem extends Component {
         super(props);
 
         this.state = {
-            comment: ''
+            comment: '',
+            currentStar: 0
         };
     }
 
     componentDidMount() {
+        console.log(this.props.match.params.id);
         this.props.fetchProduct();
     }
 
@@ -42,7 +44,8 @@ class ProductItem extends Component {
         let comment = {
             id: Math.round(Math.random() * 1000),
             userName: 'Tarique',
-            userComment: this.state.comment
+            userComment: this.state.comment,
+            rating: this.state.currentStar
         };
 
         this.setState({
@@ -71,6 +74,12 @@ class ProductItem extends Component {
                 <hr />
             </div >
         );
+    }
+
+    ratingChanged(e) {
+        this.setState({
+            currentStar: e
+        });
     }
 
     render() {
@@ -139,6 +148,14 @@ class ProductItem extends Component {
                         <textarea className={classes.commentInput} placeholder={'Enter your comments here'}
                             onChange={(e) => this.handleComment(e)} value={this.state.comment}></textarea>
                         <br />
+                        <ReactStars
+                            count={5}
+                            value={this.state.currentStar}
+                            edit={true}
+                            size={18}
+                            onChange={(e) => this.ratingChanged(e)}
+                            half={false}
+                        />
                         <button onClick={this.submitComment}>Add Comment</button>
                         {/* comments being rendered below */}
                         {product.comments.map((item) => this.renderComments(item))}
