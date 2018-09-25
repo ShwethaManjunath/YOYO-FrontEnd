@@ -1,0 +1,74 @@
+.title{
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: normal;
+    float:left;
+    margin-bottom:0px;
+}
+.dc_number_label{
+    float:left;
+}
+.subtitle{
+    margin-top:0px; 
+    font-size: 20px;
+    line-height: 1;
+    font-weight: normal;
+    float:left;
+}
+.dc_number_input{
+    margin-top:.375rem;
+    font-size: 15px;
+    height: 3.375rem;
+    box-sizing: border-box;
+    padding: .9rem 3rem .9rem 1.25rem;
+    width: 100%;
+    border: .0625rem solid #d2d2d2;
+    border-radius: .25rem;
+}
+
+
+.is_error{
+    border: .0625rem solid #d0021b;
+    background-color: #fff;
+    color: #707070;
+}
+
+.formGroup{
+    position: relative;
+    margin-bottom: .75rem;
+}
+
+.submit_button_with_name{
+    margin-top: 20px;
+    float: right;
+    height:40px;
+    font-size: 20px;
+    background-color: #2ffcaa;
+}
+.pointsAvailableTitle{
+    float:left;
+    margin-bottom:0;
+    font-size:14px;
+}
+.pointsRequiredTitle{
+    float:left;
+    margin-bottom:0;
+    font-size:14px;
+}
+.add_money_button{
+    float:left;
+    margin-top: 20px;
+    height:40px;
+    font-size: 20px;
+    background-color: #2ffcaa;
+}
+.cancel_button_with_name{
+    margin-top: 20px;
+    float: right;
+    height:40px;
+    font-size: 20px;
+    background-color: #fff;
+}
+.directProductForm{
+    margin-top:80px;
+}

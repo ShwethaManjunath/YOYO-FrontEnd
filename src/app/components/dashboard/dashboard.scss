@@ -1,4 +1,12 @@
-$bodyColor:red;
+$bodyColor: black;
 .Body{
     color: $bodyColor;
+    background-color: #ededed;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    // overflow-x: scroll;
 }

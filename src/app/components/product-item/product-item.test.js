@@ -18,4 +18,6 @@ describe('<ProductItem/>', () => {
     it('render the connected component', () => {
         expect(wrapper.length).toEqual(1)
     });
+
+    
 });
