@@ -6,32 +6,17 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Modal from '@material-ui/core/Modal';
 import Typography from '@material-ui/core/Typography';
+import TransactionHistory from '../transaction-history/transaction-history';
 
 class UserProfile extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false
-    };
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-  }
-
-  handleOpen() {
-    this.setState({ open: true });
-  };
-
-  handleClose() {
-    this.setState({ open: false });
-  };
 
   userInfo() {
     let user = {
       'name': 'testUser',
       'email': 'test123@gmail.com',
       'phone': '123456789',
-      'address': 'Mindtree Ltd Global Village Mysore Road - 123456'
+      'address': 'Mindtree Ltd Global Village Mysore Road - 123456',
+      'points':'300'
     }
 
     return (
@@ -52,13 +37,15 @@ class UserProfile extends Component {
               <p><b>Email</b>   : {user.email} </p>
               <p><b>Phone</b>   : {user.phone}</p>
               <p><b>Address</b> : {user.address}</p>
+              <p><b>Points</b> : {user.points}</p>
             </div>
-
+       
           </Grid>
-          <Button variant="contained" color="primary" onClick={this.handleOpen} style={{ marginLeft: '20%', textDecorationColor: 'White' }}>
-            Update Profile
+          <Button variant="contained" style={{backgroundColor:'#E5FCC2',marginLeft:'20%'}}>
+        Add Points
       </Button>
         </Grid>
+        <TransactionHistory/>
       </div>
     )
   }
