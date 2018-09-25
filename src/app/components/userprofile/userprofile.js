@@ -21,7 +21,7 @@ class UserProfile extends Component {
 
     return (
       <div >
-        <h2 style={{ textAlign: 'center', color: '#9de0ad' }}>User Profile</h2>
+        <h1 style={{ textAlign: 'center', color: '#9de0ad' }}>User Profile</h1>
         <Grid container spacing={24} style={{ marginLeft: '25%', marginTop: '2%', marginBottom: '3%' }}>
           <Grid item sm={2}>
             <Avatar
