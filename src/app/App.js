@@ -21,13 +21,13 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-
+          <Header />
             <Switch>
               <Route exact path='/' render={(props) => <DashBoard {...props}/>} />
               <Route path='/categories' render={(props)=> <Categories {...props}/>}/>
               <Route path='/payment' render={(props)=> <Payment {...props}/>}/>
             </Switch>
-
+          <Footer />
       </div>
     );
   }
