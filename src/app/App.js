@@ -16,17 +16,18 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-        <Header />
-        <Switch>
-          <Route exact path='/' render={(props) => <DashBoard {...props} />} />
-          <Route path='/categories' render={(props) => <Categories {...props} />} />
-          <Route path='/product/:id' render={(props) => <ProductItem {...props} />} />
-          <Route path='/payment' render={(props) => <Payment {...props} />} />
-          <Route path='/productslist' render={(props) => <Products {...props} />} />
-          <Route path='/userprofile' render={(props) => <Userprofile {...props} />} />
-          <Redirect from='/**' to='/' />
-        </Switch>
-
+      <Header />
+            <Switch>
+              <Route exact path='/' render={(props) => <DashBoard {...props}/>} />
+              <Route path='/categories' render={(props)=> <Categories {...props}/>}/>
+              <Route path='/product' render={(props) => <ProductItem {...props}/>}/>
+              <Route path='/payment' render={(props)=> <Payment {...props}/>}/>
+              <Route path='/productslist' render={(props)=> <Products {...props}/>}/>
+              <Route path='/userprofile' render={(props)=> <Userprofile {...props}/>}/>
+              <Route path='/accountDetails' render={(props)=> <Account {...props}/>}/>
+              <Redirect from='/**' to ='/'/>
+            </Switch>
+      <Footer />
       </div>
     );
   }
