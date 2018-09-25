@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Row, Col} from 'react-flexbox-grid';
 import * as classes from './payment.scss';
 import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux';
+import { postTransactions } from '../../actions/postTransactions';
 class Payment extends Component{
     constructor(){
         super();
@@ -65,7 +67,7 @@ class Payment extends Component{
         }
 
         //Post Call transaction
-                
+        this.props.postTransactions(obj);
 
         console.log(obj);
         this.setState({})
@@ -206,16 +208,12 @@ class Payment extends Component{
                             </Col>
                         :""}
                         </Row></div> :""}
-                
-                        
-                
-
-                
-                
-               
             </div>
         );
     }
 }
 
-export default Payment;
+const mapStateToProps = (state) => ({
+    allProducts: state.allProductsReducer
+})
+export default connect(mapStateToProps, {postTransactions}) (Payment);
