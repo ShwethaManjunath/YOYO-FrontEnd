@@ -10,6 +10,8 @@ import Categories from './components/categories/categories';
 import ProductItem from './components/product-item/product-item';
 import Payment from './components/payment/payment';
 import Products from './components/products/products';
+import Userprofile from './components/userprofile/userprofile';
+
 class App extends Component {
   render() {
     return (
@@ -21,6 +23,7 @@ class App extends Component {
               <Route path='/product' render={(props) => <ProductItem {...props}/>}/>
               <Route path='/payment' render={(props)=> <Payment {...props}/>}/>
               <Route path='/productslist' render={(props)=> <Products {...props}/>}/>
+              <Route path='/userprofile' render={(props)=> <Userprofile {...props}/>}/>
               <Redirect from='/**' to ='/'/>
             </Switch>
 
